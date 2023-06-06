@@ -9,4 +9,5 @@
     <p class="mt-4">{{ $project->content }}</p>
     <h3>Descrizione</h3>
     <p class="mt-4">{{ $project->description }}</p>
+    <a href="{{ route('admin.projects.index') }}" class="btn btn-primary my-3">Torna alla lista</a>
 @endsection
