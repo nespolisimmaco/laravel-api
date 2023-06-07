@@ -2,8 +2,13 @@
 
 @section('content')
     <h1 class="text-center">{{ $project->title }}</h1>
-    <div class="text-end">
-        {{ $project->slug }}
+    <div class="d-flex justify-content-between">
+        @if ($project->type)
+            <div>{{ $project->type->name }}</div>
+        @else
+            <div>Nessuna Categoria</div>
+        @endif
+        <div>{{ $project->slug }}</div>
     </div>
     <h3>Contenuto</h3>
     <p class="mt-4">{{ $project->content }}</p>
