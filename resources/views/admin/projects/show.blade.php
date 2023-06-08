@@ -4,7 +4,7 @@
     <h1 class="text-center">{{ $project->title }}</h1>
     <div class="d-flex justify-content-between">
         @if ($project->type)
-            <div>{{ $project->type->name }}</div>
+            <div>Tipo: {{ $project->type->name }}</div>
         @else
             <div>Nessuna Categoria</div>
         @endif

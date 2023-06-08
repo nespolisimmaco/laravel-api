@@ -10,7 +10,7 @@
                 <th scope="col">Id</th>
                 <th scope="col">Titolo</th>
                 <th scope="col">Slug</th>
-                <th scope="col">Categoria</th>
+                <th scope="col">Tipo</th>
                 <th scope="col">Azioni</th>
             </tr>
         </thead>
