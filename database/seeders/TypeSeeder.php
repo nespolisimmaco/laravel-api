@@ -17,7 +17,7 @@ class TypeSeeder extends Seeder
      */
     public function run()
     {
-        $types = ['Laravel', 'Vue', 'Bootstrap'];
+        $types = ['Front-end', 'Back-end'];
 
         foreach ($types as $type) {
             $new_type = new Type();
