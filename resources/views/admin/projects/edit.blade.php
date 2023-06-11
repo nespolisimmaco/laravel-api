@@ -34,6 +34,15 @@
                     @endforeach
                 </select>
             </div>
+            @foreach ($technologies as $tech)
+                <div class="form-check">
+                    <input class="form-check-input" name="techs[]" type="checkbox" value="{{ $tech->id }}"
+                        id="tech-{{ $tech->id }}" @checked(old('techs') ? in_array($tech->id, old('techs', [])) : $project->technologies->contains($tech))>
+                    <label class="form-check-label" for="tech-{{ $tech->id }}">
+                        {{ $tech->name }}
+                    </label>
+                </div>
+            @endforeach
             <button class="btn btn-success my-2" type="submit">Invia</button>
             <a href="{{ route('admin.projects.index') }}" class="btn btn-primary my-3 mx-1">Torna alla lista</a>
         </form>
