@@ -4,7 +4,7 @@
     <h1 class="text-center">Crea un nuovo progetto</h1>
     <div class="container">
 
-        <form action="{{ route('admin.projects.store') }}" method="POST">
+        <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Titolo</label>
@@ -42,6 +42,10 @@
                     </label>
                 </div>
             @endforeach
+            <div class="mb-3">
+                <label for="image" class="form-label">Immagine</label>
+                <input type="file" class="form-control" id="image" name="image">
+            </div>
             <button class="btn btn-success my-2" type="submit">Invia</button>
             <a href="{{ route('admin.projects.index') }}" class="btn btn-primary my-3 mx-1">Torna alla lista</a>
         </form>

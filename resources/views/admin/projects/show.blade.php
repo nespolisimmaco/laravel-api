@@ -2,6 +2,16 @@
 
 @section('content')
     <h1 class="text-center">{{ $project->title }}</h1>
+    {{-- Project image --}}
+    <div class="project-image my-3">
+        @if ($project->image)
+            <img width="300" src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}">
+        @else
+            <div class="w-25 p-5 bg-secondary text-white">
+                No image :(
+            </div>
+        @endif
+    </div>
     <div class="d-flex justify-content-between my-3">
         @if ($project->type)
             <div>Tipo: {{ $project->type->name }}</div>
@@ -23,7 +33,8 @@
         @endforelse
     </div>
     <a href="{{ route('admin.projects.index') }}" class="btn btn-primary my-3">Torna alla lista</a>
-    <a href="{{ route('admin.projects.edit', $project->slug) }}" class="btn btn-warning my-3 mx-1 d-inline-block">Modifica</a>
+    <a href="{{ route('admin.projects.edit', $project->slug) }}"
+        class="btn btn-warning my-3 mx-1 d-inline-block">Modifica</a>
     <form class="d-inline-block" action="{{ route('admin.projects.destroy', $project->slug) }}" method="POST">
         @csrf
         @method('DELETE')

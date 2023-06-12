@@ -43,6 +43,16 @@
                     </label>
                 </div>
             @endforeach
+            <div class="mb-3">
+                <label for="image" class="form-label">Immagine</label>
+                <input type="file" class="form-control" id="image" name="image">
+
+                @if ($project->image)
+                    <div>
+                        <img width="300" src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}">
+                    </div>
+                @endif
+            </div>
             <button class="btn btn-success my-2" type="submit">Invia</button>
             <a href="{{ route('admin.projects.index') }}" class="btn btn-primary my-3 mx-1">Torna alla lista</a>
         </form>
