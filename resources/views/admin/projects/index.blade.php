@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="my-2 text-end">
-        <a class="btn btn-secondary" href="{{ route('admin.projects.create') }}">Crea un nuovo fumetto</a>
+        <a class="btn btn-secondary" href="{{ route('admin.projects.create') }}">Crea un nuovo progetto</a>
     </div>
     <table class="table">
         <thead>
